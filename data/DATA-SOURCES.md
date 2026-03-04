@@ -31,8 +31,8 @@ Every indicator is built from public, verifiable data. This table lists every so
 
 | Indicator | Source Agency | Survey/Series | Series ID / URL | Frequency | Years Available |
 |-----------|---|---|---|---|---|
-| Labor force participation rate, age 25-54 | Bureau of Labor Statistics (BLS) | Current Population Survey (CPS) | FRED: LFPR25_54 (seasonally adjusted) | Monthly | 1948-present |
-| | | | Access: https://fred.stlouisfed.org/series/LFPR25_54 | | |
+| Labor force participation rate, age 25-54 | Bureau of Labor Statistics (BLS) | Current Population Survey (CPS) | FRED: LNS11300060 (seasonally adjusted) | Monthly | 1948-present |
+| | | | Access: https://fred.stlouisfed.org/series/LNS11300060 | | |
 | | | | BLS manual: https://www.bls.gov/cps/tables.htm | | |
 | | | | Table A-1: Employment status by age group | | |
 

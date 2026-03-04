@@ -33,7 +33,7 @@ BWI is built on open, verifiable data. Every source is public. Every bound is de
 ## The Two Scales
 
 **US-Normed** (100 = meeting basic needs by American standards)
-- Reference: Q4 (top quintile) ≈ 95 in 2024
+- Reference: Q4 (second-highest quintile) ≈ 95 in 2024
 - Q1 (bottom quintile) ≈ 2.5 in 2024
 - Same economy. Two completely different lived experiences.
 
@@ -57,9 +57,9 @@ See [methodology/BWI-METHODOLOGY-SUMMARY.md](methodology/BWI-METHODOLOGY-SUMMARY
 | Quintile | BWI Score |
 |----------|-----------|
 | Q1       | 2.5       |
-| Q2       | 18.3      |
-| Q3       | 48.7      |
-| Q4       | 82.1      |
+| Q2       | 39.6      |
+| Q3       | 74.5      |
+| Q4       | 95.2      |
 | Q5       | 99.0      |
 
 The top and bottom quintiles are living in different economies.
@@ -92,13 +92,23 @@ bwi-repo/
 ├── README.md                           (this file)
 ├── LICENSE                             (MIT)
 ├── .gitignore
+├── calculations/
+│   └── bwi-compute.py                 (full computation pipeline)
 ├── methodology/
 │   └── BWI-METHODOLOGY-SUMMARY.md     (technical methodology)
 └── data/
     └── DATA-SOURCES.md                 (all sources with identifiers)
 ```
 
-Python analysis scripts will be added in subsequent releases.
+### Running the Calculations
+
+```bash
+python3 calculations/bwi-compute.py
+```
+
+The script contains all raw indicator data, normalization bounds, and computation logic.
+It outputs quintile-level BWI scores for 2000-2024, including indicator-level detail,
+domain composites, and population-weighted averages. No external dependencies required.
 
 ## License
 

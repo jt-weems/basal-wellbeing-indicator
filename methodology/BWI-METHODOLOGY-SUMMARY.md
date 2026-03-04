@@ -42,14 +42,14 @@ Each indicator is normalized to 0–100 using theoretically grounded floor and c
 
 | Domain | Indicator | Floor (Crisis) | Ceiling (Attainment) | Data Year |
 |--------|-----------|---|---|---|
-| D1 | Burden ratio | 0.75 (75% of income) | 0.40 (40% of income) | 2024 |
-| D2a | Delinquency rate | 0.15 (15% accounts 90+ days) | 0.02 (2% accounts) | 2024 |
-| D2b | Net worth (median, $1000s) | 15 | 150 | 2024 |
-| D3 | LFPR, 25-54 | 0.60 (60%) | 0.85 (85%) | 2024 |
-| D4a | YPLL per 100K | 15,000 | 6,000 | 2023 |
-| D4b | Disability rate, 25-54 | 0.20 (20%) | 0.08 (8%) | 2023 |
+| D1 | Burden ratio (% of income) | 55% (attainment) | 85% (crisis) | Lower is better | 2024 |
+| D2a | Delinquency rate (90+ days, %) | 1.5% (attainment) | 12% (crisis) | Lower is better | 2024 |
+| D2b | Net worth (median, $1000s) | $0K (crisis) | $200K (attainment) | Higher is better | 2024 |
+| D3 | LFPR, 25-54 | 62% (crisis) | 88% (attainment) | Higher is better | 2024 |
+| D4a | YPLL per 100K | 3,500 (attainment) | 9,000 (crisis) | Lower is better | 2024 |
+| D4b | Disability rate, 25-54 | 5% (attainment) | 18% (crisis) | Lower is better | 2024 |
 
-**Reading the table**: A burden ratio of 0.75 (75% of income to essentials) = score 0 (crisis). A burden ratio of 0.40 (40% to essentials) = score 100 (attainment). Values between are linearly interpolated.
+**Reading the table**: For "lower is better" indicators, the low value is attainment (score 100) and the high value is crisis (score 0). For "higher is better" indicators, it's reversed. Values between are linearly interpolated. All scores clamped to [1, 99] to prevent log(0) in geometric mean.
 
 ### OECD-Benchmarked Bounds (Comparative)
 
@@ -57,12 +57,12 @@ Ceiling values shift to reflect conditions in top-performing OECD nations (Denma
 
 | Domain | Indicator | Floor | OECD Ceiling | Data Year |
 |--------|-----------|---|---|---|
-| D1 | Burden ratio | 0.75 | 0.32 | 2023 |
-| D2a | Delinquency rate | 0.15 | 0.01 | 2023 |
-| D2b | Net worth (median, $1000s) | 15 | 200 | 2023 |
-| D3 | LFPR, 25-54 | 0.60 | 0.88 | 2023 |
-| D4a | YPLL per 100K | 15,000 | 5,000 | 2023 |
-| D4b | Disability rate, 25-54 | 0.20 | 0.06 | 2023 |
+| D1 | Burden ratio | 85% (crisis) | 32% (OECD attainment) | 2023 |
+| D2a | Delinquency rate | 12% (crisis) | 1% (OECD attainment) | 2023 |
+| D2b | Net worth (median, $1000s) | $0K (crisis) | $200K (OECD attainment) | 2023 |
+| D3 | LFPR, 25-54 | 62% (crisis) | 88% (OECD attainment) | 2023 |
+| D4a | YPLL per 100K | 9,000 (crisis) | 5,000 (OECD attainment) | 2023 |
+| D4b | Disability rate, 25-54 | 18% (crisis) | 6% (OECD attainment) | 2023 |
 
 ## Aggregation: Geometric Mean
 
@@ -103,10 +103,10 @@ All metrics are computed at the income quintile level (Q1=bottom 20%, Q5=top 20%
 ```
 2024 US-Normed BWI by Quintile:
 
-Q1: 2.5    (crisis across all domains)
-Q2: 18.3   (some stability in D3, crisis in D1/D2)
-Q3: 48.7   (functional but precarious)
-Q4: 82.1   (stable, some vulnerabilities)
+Q1:  2.5   (crisis across all domains)
+Q2: 39.6   (some stability in D3/D4, pressure in D1/D2)
+Q3: 74.5   (functional but precarious)
+Q4: 95.2   (stable, minor vulnerabilities)
 Q5: 99.0   (full attainment)
 ```
 

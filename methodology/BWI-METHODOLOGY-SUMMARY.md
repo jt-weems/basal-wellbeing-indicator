@@ -122,6 +122,29 @@ These measures complement BWI but are not aggregated into the composite:
 
 These tracks show psychological and behavioral dimensions that quantify the lived experience beyond pure material conditions.
 
+## Known Data Limitations
+
+### D1 Burden Component Decomposition (Post-2008 Divergence)
+
+The D1 burden ratio is computed from BLS Consumer Expenditure Survey aggregate tables. We also present a five-category decomposition (Housing, Healthcare, Food, Transportation, Childcare) for narrative clarity. These two data series diverge starting in 2008:
+
+| Year | D1 Aggregate | Component Sum | Gap |
+|------|-------------|---------------|-----|
+| 1990 | 54.6% | 54.6% | 0.0 |
+| 2000 | 55.3% | 55.3% | 0.0 |
+| 2008 | 56.5% | 60.5% | 4.0 |
+| 2015 | 57.3% | 61.3% | 4.0 |
+| 2020 | 57.0% | 60.7% | 3.7 |
+| 2024 | 58.6% | 61.6% | 3.0 |
+
+**Cause**: The childcare/education component in CEX underwent methodology changes around 2008, including reclassification of education-related expenditures and expanded coverage of formal childcare arrangements. The D1 aggregate series maintains structural consistency across the full time range; the component-level series reflects these methodology shifts.
+
+**Design decision**: The D1 aggregate (58.6% in 2024) is the authoritative value used in all BWI computations. Component-level data is presented as the "five biggest cost categories" for illustrative purposes — it shows directional trends accurately (housing up, food down, etc.) but should not be expected to sum exactly to the D1 aggregate in post-2008 years. We chose to preserve structural consistency in the composite indicator rather than force reconciliation against component series that changed methodology mid-stream. We cannot plan around external methodology changes; we can only enforce structural consistency in our own metric.
+
+### CEX Q1 Composition
+
+The lowest income quintile (Q1) in CEX data includes elderly households on fixed income, students, and temporarily low-income households. This inflates the apparent burden ratio relative to a permanent-income concept. This is a known limitation of all CEX-based poverty research and applies equally across all time periods, so trend comparisons remain valid.
+
 ## Revision Protocol
 
 Bounds and aggregation methods are fixed for multi-year comparability. If data sources change or new research suggests different bounds, that becomes version 2.0 with full documentation of the change.
